@@ -1,24 +1,19 @@
 <?php
 
-namespace App\Models\Communities;
+namespace App\Models;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class LikeCommunities extends Model
+class Notifications extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'post_community_id',
         'user_id',
+        'message',
+        'status',
     ];
-
-    public function postCommunity()
-    {
-        return $this->belongsTo(PostCommunities::class);
-    }
 
     public function user()
     {
